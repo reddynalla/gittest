@@ -1,6 +1,3 @@
-node('jdk11-mvn3.8.4') {
-    stage('git') {
-        git 'https://github.com/GitPracticeRepo/java11-examples.git'
 pipeline {
     agent { label 'jdk11-mvn3.8.4' }
     triggers { upstream(upstreamProjects: 'starterproject', threshold: hudson.model.Result.SUCCESS) }
